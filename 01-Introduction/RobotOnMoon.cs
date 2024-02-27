@@ -11,7 +11,44 @@ public class RobotOnMoon
 {
     public string isSafeCommand(string[] board, string S)
     {
-        return default(string);
+        int row = -1;
+        int col = -1;
+
+        // Find the initial position of the robot
+        for (int i = 0; i < board.Length; i++)
+        {
+            int index = board[i].IndexOf('S');
+            if (index != -1)
+            {
+                row = i;
+                col = index;
+                break;
+            }
+        }
+
+        // Process each command
+        foreach (char c in S)
+        {
+            // Calculate the next position based on the command
+            int nextRow = row, nextCol = col;
+            if (c == 'U') nextRow--;
+            else if (c == 'D') nextRow++;
+            else if (c == 'L') nextCol--;
+            else if (c == 'R') nextCol++;
+
+            // Check if the next position is within the boundaries of the map
+            if (nextRow < 0 || nextRow >= board.Length || nextCol < 0 || nextCol >= board[0].Length)
+                return "Dead"; // Robot leaves the mapped area and dies
+
+            // Check if the next position is an obstacle
+            if (board[nextRow][nextCol] == '#') continue; // Ignore the command
+
+            // Update the position of the robot
+            row = nextRow;
+            col = nextCol;
+        }
+
+        return "Alive";
     }
 
     #region Testing code
@@ -71,7 +108,7 @@ public class RobotOnMoon
         return res;
     }
 
-    public static void Run()
+    public static void Main()
     {
         Boolean all_right;
         all_right = true;
