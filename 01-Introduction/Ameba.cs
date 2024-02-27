@@ -8,9 +8,17 @@ using System.Text.RegularExpressions;
 
 public class Ameba
 {
+	
 	public int simulate(int[] X, int A)
 	{
-	    return default(int);
+		foreach (int gel in X)
+        {
+            if (gel == A)
+            {
+                A *= 2; // Amoeba consumes the gel and doubles its size
+            }
+        }
+        return A;
 	}
 
 	#region Testing code
@@ -56,7 +64,7 @@ public class Ameba
 		Console.WriteLine("");
 		return res;
 	}
-	public static void Run() {
+	public static void Main() {
 		Boolean all_right;
 		all_right = true;
 		
