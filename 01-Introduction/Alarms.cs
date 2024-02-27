@@ -10,7 +10,20 @@ public class Alarms
 {
 	public int countAlarms(int[] volume, int S)
 	{
-        return default(int);
+		Queue<int> alarmsQueue = new Queue<int>();
+		for(int i=0;i<volume.Length;i++)
+		{
+			alarmsQueue.Enqueue(volume[i]);
+		}
+		int counter = 0;
+		do
+		{
+			int firstAlarm = alarmsQueue.Dequeue();
+			S -= firstAlarm;
+			alarmsQueue.Enqueue(firstAlarm);
+			counter++;
+		}while(S>0);
+        return counter;
 	}
 
 	#region Testing code
