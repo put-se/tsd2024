@@ -11,7 +11,65 @@ public class RobotOnMoon
 {
     public string isSafeCommand(string[] board, string S)
     {
-        return default(string);
+		int coordX = 0;
+		int coordY = 0;
+		int xCounter = 0;
+		int maxY = board.Length;
+		int maxX = board[0].Length;
+		for (int i = 0; i < board.Length; i++)
+		{
+			foreach (char c in board[i])
+			{
+   				if (c.Equals('S'))
+				{
+					coordX = xCounter;
+					coordY = i;
+				}
+				xCounter += 1; 
+			}
+			xCounter = 0;
+		}
+		
+		foreach (char command in S)
+		{
+			int tempX = coordX;
+			int tempY = coordY;
+			if (command.Equals('U'))
+			{
+				coordY -= 1;
+			}
+			else if (command.Equals('D'))
+			{
+				coordY += 1;
+			}
+			else if (command.Equals('L'))
+			{
+				coordX -= 1;
+			}
+			else if (command.Equals('R'))
+			{
+				coordX += 1;
+			}
+			
+			if(coordX < 0 || coordX > maxX-1 || coordY < 0 || coordY > maxY-1)
+			{
+				return "Dead";
+			}
+			
+			string row = board[coordY];
+			char element = row[coordX];
+			if (element.Equals('.'))
+			{
+				continue;
+			}
+			else if (element.Equals('#'))
+			{
+				coordX = tempX;
+				coordY = tempY;
+			}
+		}
+		
+        return "Alive";
     }
 
     #region Testing code
@@ -71,7 +129,7 @@ public class RobotOnMoon
         return res;
     }
 
-    public static void Run()
+    public static void Main(string[] args)
     {
         Boolean all_right;
         all_right = true;
