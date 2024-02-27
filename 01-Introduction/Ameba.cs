@@ -10,7 +10,12 @@ public class Ameba
 {
 	public int simulate(int[] X, int A)
 	{
-	    return default(int);
+		for (int i = 0; X.Length > i; ++i) {
+			if (X[i] == A) {
+				A += A;
+			}
+		}
+	    return A;
 	}
 
 	#region Testing code
@@ -18,7 +23,7 @@ public class Ameba
 	private static Boolean KawigiEdit_RunTest(int testNum, int[] p0, int p1, Boolean hasAnswer, int p2) {
 		Console.Write("Test " + testNum + ": [" + "{");
 		for (int i = 0; p0.Length > i; ++i) {
-			if (i > 0) {
+			if (p0[i] == p1) {
 				Console.Write(",");
 			}
 			Console.Write(p0[i]);
@@ -56,7 +61,7 @@ public class Ameba
 		Console.WriteLine("");
 		return res;
 	}
-	public static void Run() {
+	public static void Main(string[] args) {
 		Boolean all_right;
 		all_right = true;
 		
