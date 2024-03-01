@@ -66,7 +66,7 @@ public class Alarms
 		Console.WriteLine("");
 		return res;
 	}
-	public static void Main() {
+	public static void Run() {
 		Boolean all_right;
 		all_right = true;
 		
