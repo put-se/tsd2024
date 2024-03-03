@@ -1,0 +1,15 @@
+c:\Users\lucas\Documents\poznan\tsd2024\01-Introduction\bin\Debug\net8.0\ProblemChallenge.exe
+c:\Users\lucas\Documents\poznan\tsd2024\01-Introduction\bin\Debug\net8.0\ProblemChallenge.deps.json
+c:\Users\lucas\Documents\poznan\tsd2024\01-Introduction\bin\Debug\net8.0\ProblemChallenge.runtimeconfig.json
+c:\Users\lucas\Documents\poznan\tsd2024\01-Introduction\bin\Debug\net8.0\ProblemChallenge.dll
+c:\Users\lucas\Documents\poznan\tsd2024\01-Introduction\bin\Debug\net8.0\ProblemChallenge.pdb
+c:\Users\lucas\Documents\poznan\tsd2024\01-Introduction\obj\Debug\net8.0\ProblemChallenge.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\lucas\Documents\poznan\tsd2024\01-Introduction\obj\Debug\net8.0\ProblemChallenge.AssemblyInfoInputs.cache
+c:\Users\lucas\Documents\poznan\tsd2024\01-Introduction\obj\Debug\net8.0\ProblemChallenge.AssemblyInfo.cs
+c:\Users\lucas\Documents\poznan\tsd2024\01-Introduction\obj\Debug\net8.0\ProblemChallenge.csproj.CoreCompileInputs.cache
+c:\Users\lucas\Documents\poznan\tsd2024\01-Introduction\obj\Debug\net8.0\ProblemChallenge.sourcelink.json
+c:\Users\lucas\Documents\poznan\tsd2024\01-Introduction\obj\Debug\net8.0\ProblemChallenge.dll
+c:\Users\lucas\Documents\poznan\tsd2024\01-Introduction\obj\Debug\net8.0\refint\ProblemChallenge.dll
+c:\Users\lucas\Documents\poznan\tsd2024\01-Introduction\obj\Debug\net8.0\ProblemChallenge.pdb
+c:\Users\lucas\Documents\poznan\tsd2024\01-Introduction\obj\Debug\net8.0\ProblemChallenge.genruntimeconfig.cache
+c:\Users\lucas\Documents\poznan\tsd2024\01-Introduction\obj\Debug\net8.0\ref\ProblemChallenge.dll

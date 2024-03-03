@@ -9,9 +9,70 @@ using System.Text.RegularExpressions;
 
 public class RobotOnMoon
 {
+    private (int, int) startingPoint(string[] board){
+        int i = 0;
+        int j = 0;
+        for (int a = 0; board.Length > a; a++){
+            for (int b = 0; board[a].Length > b; b++){
+                if(board[a][b] == 'S'){
+                    Console.WriteLine($"Found init pos: ({a},{b})");
+                    i=a;
+                    j=b;
+                    break;
+                }
+            }
+        }
+        return (i,j);
+    }
     public string isSafeCommand(string[] board, string S)
     {
-        return default(string);
+        int i, j, tempI, tempJ;
+        (int, int)point = startingPoint(board);
+        i = point.Item1;
+        j = point.Item2;
+        char[][] charBoard = new char[board.Length][];
+
+        for (int n = 0; n < board.Length; n++)
+        {
+            charBoard[n] = board[n].ToCharArray();
+        }
+
+        tempI = point.Item1;
+        tempJ = point.Item2;
+        foreach (var command in S)
+        {
+            if(command == 'U'){
+                tempI-=1;
+            }
+            else if (command == 'D'){
+                tempI+=1;
+            }
+            else if (command == 'L'){
+                tempJ-=1;
+            }
+            else if (command == 'R'){
+                tempJ+=1;
+            }
+            //If the Robot get out of the board, it means that it was on a border and so no wall can stop it from getting out.
+            if(tempI<0 || tempJ <0 || tempI>=charBoard.Length || tempJ>= charBoard[0].Length){
+                return "Dead";
+            }
+            else if (board[tempI][tempJ] == '.'){
+                charBoard[i][j]='.';
+                i=tempI;
+                j=tempJ;
+                charBoard[i][j]='S';
+            }
+            
+            //Code if we want to take into account obstacles
+            // else if (board[tempI][tempJ].Equals("#")){
+            //     
+            // }
+
+            tempI = i;
+            tempJ = j;
+        }
+        return "Alive";
     }
 
     #region Testing code
