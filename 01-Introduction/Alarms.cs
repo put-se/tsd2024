@@ -5,12 +5,23 @@ using System.Collections.Specialized;
 using System.Text;
 using System.Text.RegularExpressions;
 
-
 public class Alarms
 {
 	public int countAlarms(int[] volume, int S)
 	{
-        return default(int);
+		var alarms = 0;
+		var index = 0;
+		
+        while (S > 0)
+		{
+			S -= volume[index];
+			alarms++;
+			index++;
+			if (index == volume.Length)
+				index = 0;
+		}
+		
+		return alarms;
 	}
 
 	#region Testing code
@@ -56,7 +67,7 @@ public class Alarms
 		Console.WriteLine("");
 		return res;
 	}
-	public static void Run() {
+	public static void Main(string[] args) {
 		Boolean all_right;
 		all_right = true;
 		
