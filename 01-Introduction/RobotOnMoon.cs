@@ -11,7 +11,89 @@ public class RobotOnMoon
 {
     public string isSafeCommand(string[] board, string S)
     {
-        return default(string);
+        var robotCoords = findRobot(board);
+        var robotX = robotCoords[0];
+        var robotY = robotCoords[1];
+
+        foreach (var direction in S)
+        {
+            if (direction == 'U')
+            {
+                if (!checkBoundaries(board, robotX, robotY - 1))
+                    return "Dead";
+
+                if (isObstacle(board, robotX, robotY - 1))
+                    continue;
+
+                robotY -= 1;
+            }
+
+            if (direction == 'D')
+            {
+                if (!checkBoundaries(board, robotX, robotY + 1))
+                    return "Dead";
+
+                if (isObstacle(board, robotX, robotY + 1))
+                    continue;
+
+                robotY += 1;
+            }
+
+            if (direction == 'L')
+            {
+                if (!checkBoundaries(board, robotX - 1, robotY))
+                    return "Dead";
+
+                if (isObstacle(board, robotX - 1, robotY))
+                    continue;
+
+                robotX -= 1;
+            }
+
+            if (direction == 'R')
+            {
+                if (!checkBoundaries(board, robotX + 1, robotY))
+                    return "Dead";
+
+                if (isObstacle(board, robotX + 1, robotY))
+                    continue;
+
+                robotX += 1;
+            }
+        }
+
+        return "Alive";
+    }
+
+    private bool checkBoundaries(string[] board, int robotX, int robotY)
+    {
+        if (robotX < 0 || robotX >= board[0].Length)
+            return false;
+
+        if (robotY < 0 || robotY >= board.Length)
+            return false;
+
+        return true;
+    }
+
+    private bool isObstacle(string[] board, int robotX, int robotY)
+    {
+        return board[robotY][robotX] == '#';
+    }
+
+    private int[] findRobot(string[] board)
+    {
+        for (int i = 0; i < board.Length; i++)
+        {
+            for (int j = 0; j < board[i].Length; j++)
+            {
+                if (board[i][j] == 'S')
+                {
+                    return new int[] { j, i };
+                }
+            }
+        }
+        return new int[] { -1, -1 };
     }
 
     #region Testing code
@@ -71,7 +153,7 @@ public class RobotOnMoon
         return res;
     }
 
-    public static void Run()
+    public static void Main(string[] args)
     {
         Boolean all_right;
         all_right = true;
