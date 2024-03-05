@@ -1,0 +1,15 @@
+C:\Users\mouad\OneDrive\Bureau\EILCO\Mobilité\tsd2024\01-Introduction\bin\Debug\net8.0\ProblemChallenge.exe
+C:\Users\mouad\OneDrive\Bureau\EILCO\Mobilité\tsd2024\01-Introduction\bin\Debug\net8.0\ProblemChallenge.deps.json
+C:\Users\mouad\OneDrive\Bureau\EILCO\Mobilité\tsd2024\01-Introduction\bin\Debug\net8.0\ProblemChallenge.runtimeconfig.json
+C:\Users\mouad\OneDrive\Bureau\EILCO\Mobilité\tsd2024\01-Introduction\bin\Debug\net8.0\ProblemChallenge.dll
+C:\Users\mouad\OneDrive\Bureau\EILCO\Mobilité\tsd2024\01-Introduction\bin\Debug\net8.0\ProblemChallenge.pdb
+C:\Users\mouad\OneDrive\Bureau\EILCO\Mobilité\tsd2024\01-Introduction\obj\Debug\net8.0\ProblemChallenge.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mouad\OneDrive\Bureau\EILCO\Mobilité\tsd2024\01-Introduction\obj\Debug\net8.0\ProblemChallenge.AssemblyInfoInputs.cache
+C:\Users\mouad\OneDrive\Bureau\EILCO\Mobilité\tsd2024\01-Introduction\obj\Debug\net8.0\ProblemChallenge.AssemblyInfo.cs
+C:\Users\mouad\OneDrive\Bureau\EILCO\Mobilité\tsd2024\01-Introduction\obj\Debug\net8.0\ProblemChallenge.csproj.CoreCompileInputs.cache
+C:\Users\mouad\OneDrive\Bureau\EILCO\Mobilité\tsd2024\01-Introduction\obj\Debug\net8.0\ProblemChallenge.sourcelink.json
+C:\Users\mouad\OneDrive\Bureau\EILCO\Mobilité\tsd2024\01-Introduction\obj\Debug\net8.0\ProblemChallenge.dll
+C:\Users\mouad\OneDrive\Bureau\EILCO\Mobilité\tsd2024\01-Introduction\obj\Debug\net8.0\refint\ProblemChallenge.dll
+C:\Users\mouad\OneDrive\Bureau\EILCO\Mobilité\tsd2024\01-Introduction\obj\Debug\net8.0\ProblemChallenge.pdb
+C:\Users\mouad\OneDrive\Bureau\EILCO\Mobilité\tsd2024\01-Introduction\obj\Debug\net8.0\ProblemChallenge.genruntimeconfig.cache
+C:\Users\mouad\OneDrive\Bureau\EILCO\Mobilité\tsd2024\01-Introduction\obj\Debug\net8.0\ref\ProblemChallenge.dll

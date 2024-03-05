@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "dotnet",
+			"task": "build C:\\Users\\mouad\\OneDrive\\Bureau\\EILCO\\Mobilité\\tsd2024\\01-Introduction\\ProblemChallenge.csproj",
+			"file": "C:\\Users\\mouad\\OneDrive\\Bureau\\EILCO\\Mobilité\\tsd2024\\01-Introduction\\ProblemChallenge.csproj",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "dotnet: build C:\\Users\\mouad\\OneDrive\\Bureau\\EILCO\\Mobilité\\tsd2024\\01-Introduction\\ProblemChallenge.csproj"
+		}
+	]
+}

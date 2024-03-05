@@ -11,7 +11,57 @@ public class RobotOnMoon
 {
     public string isSafeCommand(string[] board, string S)
     {
-        return default(string);
+        int rows = board.Length;
+        int cols = board[0].Length;
+        int robotRow = -1, robotCol = -1;
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                if (board[i][j] == 'S')
+                {
+                    robotRow = i;
+                    robotCol = j;
+                    break;
+                }
+            }
+            if (robotRow != -1) break;
+        }
+        foreach (char cmd in S)
+        {
+            int nextRow = robotRow, nextCol = robotCol;
+
+            switch (cmd)
+            {
+                case 'U':
+                    nextRow--;
+                    break;
+                case 'D':
+                    nextRow++;
+                    break;
+                case 'L':
+                    nextCol--;
+                    break;
+                case 'R':
+                    nextCol++;
+                    break;
+                default:
+                    break;
+            }
+            if (nextRow >= 0 && nextRow < rows && nextCol >= 0 && nextCol < cols)
+            {
+                if (board[nextRow][nextCol] != '#')
+                {
+                    robotRow = nextRow;
+                    robotCol = nextCol;
+                }
+            }
+            else
+            {
+                return "Dead";
+            }
+        }
+        return "Alive";
     }
 
     #region Testing code
@@ -81,42 +131,42 @@ public class RobotOnMoon
         string p2;
 
         // ----- test 0 -----
-        p0 = new string[] {".....", ".###.", "..S#.", "...#."};
+        p0 = new string[] { ".....", ".###.", "..S#.", "...#." };
         p1 = "URURURURUR";
         p2 = "Alive";
         all_right = KawigiEdit_RunTest(0, p0, p1, true, p2) && all_right;
         // ------------------
 
         // ----- test 1 -----
-        p0 = new string[] {".....", ".###.", "..S..", "...#."};
+        p0 = new string[] { ".....", ".###.", "..S..", "...#." };
         p1 = "URURURURUR";
         p2 = "Dead";
         all_right = KawigiEdit_RunTest(1, p0, p1, true, p2) && all_right;
         // ------------------
 
         // ----- test 2 -----
-        p0 = new string[] {".....", ".###.", "..S..", "...#."};
+        p0 = new string[] { ".....", ".###.", "..S..", "...#." };
         p1 = "URURU";
         p2 = "Alive";
         all_right = KawigiEdit_RunTest(2, p0, p1, true, p2) && all_right;
         // ------------------
 
         // ----- test 3 -----
-        p0 = new string[] {"#####", "#...#", "#.S.#", "#...#", "#####"};
+        p0 = new string[] { "#####", "#...#", "#.S.#", "#...#", "#####" };
         p1 = "DRULURLDRULRUDLRULDLRULDRLURLUUUURRRRDDLLDD";
         p2 = "Alive";
         all_right = KawigiEdit_RunTest(3, p0, p1, true, p2) && all_right;
         // ------------------
 
         // ----- test 4 -----
-        p0 = new string[] {"#####", "#...#", "#.S.#", "#...#", "#.###"};
+        p0 = new string[] { "#####", "#...#", "#.S.#", "#...#", "#.###" };
         p1 = "DRULURLDRULRUDLRULDLRULDRLURLUUUURRRRDDLLDD";
         p2 = "Dead";
         all_right = KawigiEdit_RunTest(4, p0, p1, true, p2) && all_right;
         // ------------------
 
         // ----- test 5 -----
-        p0 = new string[] {"S"};
+        p0 = new string[] { "S" };
         p1 = "R";
         p2 = "Dead";
         all_right = KawigiEdit_RunTest(5, p0, p1, true, p2) && all_right;
