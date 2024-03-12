@@ -56,6 +56,40 @@ class Program
         {
             Console.WriteLine($"Date: {price.Date}, Price: {price.Price}");
         }
+
+        // Fetch gold prices for January 2020
+        DateTime january2020Start = new DateTime(2020, 1, 1);
+        DateTime january2020End = new DateTime(2020, 1, 31);
+        List<GoldPrice> january2020Prices = goldClient.GetGoldPrices(january2020Start, january2020End).GetAwaiter().GetResult();
+
+        // Calculate the percentage increase for each day compared to the price at the beginning of the month
+        double initialPrice = january2020Prices.First().Price;
+        var percentageIncreases = january2020Prices.Select(price =>
+            new
+            {
+                Date = price.Date,
+                PercentageIncrease = (price.Price - initialPrice) / initialPrice * 100
+            });
+
+        // Method syntax to find days with more than 5% increase
+        var daysWith5PercentIncreaseMethodSyntax = percentageIncreases.Where(p => p.PercentageIncrease > 5);
+        Console.WriteLine("Days with more than 5% increase using method syntax:");
+        foreach (var day in daysWith5PercentIncreaseMethodSyntax)
+        {
+            Console.WriteLine($"Date: {day.Date}, Percentage Increase: {day.PercentageIncrease}%");
+        }
+
+        // Query syntax to find days with more than 5% increase
+        var daysWith5PercentIncreaseQuerySyntax = from p in percentageIncreases
+                                                  where p.PercentageIncrease > 5
+                                                  select p;
+        Console.WriteLine("\nDays with more than 5% increase using query syntax:");
+        foreach (var day in daysWith5PercentIncreaseQuerySyntax)
+        {
+            Console.WriteLine($"Date: {day.Date}, Percentage Increase: {day.PercentageIncrease}%");
+        }
     }
+
+
 
 }
