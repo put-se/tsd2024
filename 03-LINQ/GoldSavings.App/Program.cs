@@ -273,6 +273,10 @@ class Program
             }
         }
 
+
+        savetoXML(thisMonthPrices);
+
+        // 9
         static List<GoldPrice> readFromXML()
         {
             var xml = new System.Xml.Serialization.XmlSerializer(typeof(List<GoldPrice>));
@@ -282,11 +286,7 @@ class Program
             }
         }
 
-
-        savetoXML(thisMonthPrices);
-
-
-
+        List<GoldPrice> xmlPrice = readFromXML();
 
 
     }
