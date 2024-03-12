@@ -1,0 +1,17 @@
+C:\Users\Agawu\OneDrive\Pulpit\Studia\Semestr VIII\tsd2024\03-LINQ\GoldSavings.App\bin\Debug\net7.0\GoldSavings.App.exe
+C:\Users\Agawu\OneDrive\Pulpit\Studia\Semestr VIII\tsd2024\03-LINQ\GoldSavings.App\bin\Debug\net7.0\GoldSavings.App.deps.json
+C:\Users\Agawu\OneDrive\Pulpit\Studia\Semestr VIII\tsd2024\03-LINQ\GoldSavings.App\bin\Debug\net7.0\GoldSavings.App.runtimeconfig.json
+C:\Users\Agawu\OneDrive\Pulpit\Studia\Semestr VIII\tsd2024\03-LINQ\GoldSavings.App\bin\Debug\net7.0\GoldSavings.App.dll
+C:\Users\Agawu\OneDrive\Pulpit\Studia\Semestr VIII\tsd2024\03-LINQ\GoldSavings.App\bin\Debug\net7.0\GoldSavings.App.pdb
+C:\Users\Agawu\OneDrive\Pulpit\Studia\Semestr VIII\tsd2024\03-LINQ\GoldSavings.App\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Agawu\OneDrive\Pulpit\Studia\Semestr VIII\tsd2024\03-LINQ\GoldSavings.App\obj\Debug\net7.0\GoldSavings.App.csproj.AssemblyReference.cache
+C:\Users\Agawu\OneDrive\Pulpit\Studia\Semestr VIII\tsd2024\03-LINQ\GoldSavings.App\obj\Debug\net7.0\GoldSavings.App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Agawu\OneDrive\Pulpit\Studia\Semestr VIII\tsd2024\03-LINQ\GoldSavings.App\obj\Debug\net7.0\GoldSavings.App.AssemblyInfoInputs.cache
+C:\Users\Agawu\OneDrive\Pulpit\Studia\Semestr VIII\tsd2024\03-LINQ\GoldSavings.App\obj\Debug\net7.0\GoldSavings.App.AssemblyInfo.cs
+C:\Users\Agawu\OneDrive\Pulpit\Studia\Semestr VIII\tsd2024\03-LINQ\GoldSavings.App\obj\Debug\net7.0\GoldSavings.App.csproj.CoreCompileInputs.cache
+C:\Users\Agawu\OneDrive\Pulpit\Studia\Semestr VIII\tsd2024\03-LINQ\GoldSavings.App\obj\Debug\net7.0\GoldSavings.App.csproj.CopyComplete
+C:\Users\Agawu\OneDrive\Pulpit\Studia\Semestr VIII\tsd2024\03-LINQ\GoldSavings.App\obj\Debug\net7.0\GoldSavings.App.dll
+C:\Users\Agawu\OneDrive\Pulpit\Studia\Semestr VIII\tsd2024\03-LINQ\GoldSavings.App\obj\Debug\net7.0\refint\GoldSavings.App.dll
+C:\Users\Agawu\OneDrive\Pulpit\Studia\Semestr VIII\tsd2024\03-LINQ\GoldSavings.App\obj\Debug\net7.0\GoldSavings.App.pdb
+C:\Users\Agawu\OneDrive\Pulpit\Studia\Semestr VIII\tsd2024\03-LINQ\GoldSavings.App\obj\Debug\net7.0\GoldSavings.App.genruntimeconfig.cache
+C:\Users\Agawu\OneDrive\Pulpit\Studia\Semestr VIII\tsd2024\03-LINQ\GoldSavings.App\obj\Debug\net7.0\ref\GoldSavings.App.dll
