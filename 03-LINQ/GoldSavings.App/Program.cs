@@ -88,6 +88,72 @@ class Program
         {
             Console.WriteLine($"Date: {day.Date}, Percentage Increase: {day.PercentageIncrease}%");
         }
+
+        // Get data for the last 93 days (maximum allowed by the app)
+        DateTime endDate = new DateTime(2022, 12, 31);
+        DateTime startDate = endDate.AddDays(-93); // 93 days ago
+
+        // Initialize lists to store prices for each year
+        List<GoldPrice> goldPrices= new List<GoldPrice>();
+
+        // Fetch gold prices for each year from 2019 to 2022
+        while(startDate.Year > 2018)
+        {
+            DateTime yearStart = startDate;
+            DateTime yearEnd = endDate;
+
+            // Get gold prices for the year
+            List<GoldPrice> prices = goldClient.GetGoldPrices(startDate, endDate).GetAwaiter().GetResult();
+            goldPrices.AddRange(prices);
+            
+            endDate = yearStart;
+            startDate = yearStart.AddDays(-93);
+
+            // Filter prices to ensure they are within the last 93 days
+            prices = prices.Where(p => p.Date >= startDate && p.Date <= endDate).ToList();
+
+        }
+
+        goldPrices = goldPrices.Where(p => p.Date >= new DateTime(2019, 1, 1) && p.Date <= new DateTime(2022, 12, 31)).OrderByDescending(p => p.Price).Skip(10).Take(3).ToList();
+        Console.WriteLine("Dates corresponding to the second ten of prices ranking:");
+        foreach (var price in goldPrices)
+        {
+            Console.WriteLine($"Date: {price.Date}, Price: {price.Price}");
+        }
+        // query syntax
+        DateTime endDateQuerySyntax = new DateTime(2022, 12, 31);
+        DateTime startDateQuerySyntax = endDateQuerySyntax.AddDays(-93); // 93 days ago
+
+        List<GoldPrice> goldPricesQuerySyntax = new List<GoldPrice>();
+
+        while (startDateQuerySyntax.Year > 2018)
+        {
+            DateTime yearStartQuerySyntax = startDateQuerySyntax;
+            DateTime yearEndQuerySyntax = endDateQuerySyntax;
+
+            // Get gold prices for the year
+            List<GoldPrice> pricesQuerySyntax = goldClient.GetGoldPrices(yearStartQuerySyntax, yearEndQuerySyntax).GetAwaiter().GetResult();
+            goldPricesQuerySyntax.AddRange(pricesQuerySyntax);
+
+            endDateQuerySyntax = yearStartQuerySyntax; // Update endDateQuerySyntax
+            startDateQuerySyntax = yearStartQuerySyntax.AddDays(-93); // Update startDateQuerySyntax
+        }
+
+        // Filter and sort prices
+        goldPricesQuerySyntax = goldPricesQuerySyntax
+            .Where(p => p.Date >= new DateTime(2019, 1, 1) && p.Date <= new DateTime(2022, 12, 31))
+            .OrderByDescending(p => p.Price)
+            .Skip(10)
+            .Take(3)
+            .ToList();
+
+        Console.WriteLine("Dates corresponding to the second ten of prices ranking (query syntax):");
+        foreach (var priceQuery in goldPricesQuerySyntax)
+        {
+            Console.WriteLine($"Date: {priceQuery.Date}, Price: {priceQuery.Price}");
+        }
+
+
     }
 
 
