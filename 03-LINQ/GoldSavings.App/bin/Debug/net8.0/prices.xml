@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGoldPrice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GoldPrice>
+    <Date>2024-03-01T00:00:00</Date>
+    <Price>262.1</Price>
+  </GoldPrice>
+  <GoldPrice>
+    <Date>2024-03-04T00:00:00</Date>
+    <Price>263.09</Price>
+  </GoldPrice>
+  <GoldPrice>
+    <Date>2024-03-05T00:00:00</Date>
+    <Price>268.59</Price>
+  </GoldPrice>
+  <GoldPrice>
+    <Date>2024-03-06T00:00:00</Date>
+    <Price>273.37</Price>
+  </GoldPrice>
+  <GoldPrice>
+    <Date>2024-03-07T00:00:00</Date>
+    <Price>273.01</Price>
+  </GoldPrice>
+  <GoldPrice>
+    <Date>2024-03-08T00:00:00</Date>
+    <Price>273.35</Price>
+  </GoldPrice>
+  <GoldPrice>
+    <Date>2024-03-11T00:00:00</Date>
+    <Price>275</Price>
+  </GoldPrice>
+</ArrayOfGoldPrice>

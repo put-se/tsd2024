@@ -1,5 +1,7 @@
 ﻿using GoldSavings.App.Model;
 using GoldSavings.App.Client;
+using System.Xml.Serialization;
+using System.Diagnostics;
 namespace GoldSavings.App;
 
 class Program
@@ -259,6 +261,29 @@ class Program
         {
             Console.WriteLine("No data available for the specified years.");
         }
+
+        // 8
+
+        static void savetoXML(List<GoldPrice> prices)
+        {
+            var xml = new System.Xml.Serialization.XmlSerializer(typeof(List<GoldPrice>));
+            using (var stream = new System.IO.FileStream("prices.xml", System.IO.FileMode.Create))
+            {
+                xml.Serialize(stream, prices);
+            }
+        }
+
+        static List<GoldPrice> readFromXML()
+        {
+            var xml = new System.Xml.Serialization.XmlSerializer(typeof(List<GoldPrice>));
+            using (var stream = new System.IO.FileStream("prices.xml", System.IO.FileMode.Open))
+            {
+                return (List<GoldPrice>)xml.Deserialize(stream);
+            }
+        }
+
+
+        savetoXML(thisMonthPrices);
 
 
 
