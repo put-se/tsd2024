@@ -31,14 +31,25 @@ class Program
         var top3HighestPrices = lastYearPrices.OrderByDescending(p => p.Price).Take(3).ToList();
         var top3LowestPrices = lastYearPrices.OrderBy(p => p.Price).Take(3).ToList();
 
+        var top3HighestPricesQuery = (from p in lastYearPrices orderby p.Price descending select p).Take(3).ToList();
+        var top3LowestPricesQuery = (from p in lastYearPrices orderby p.Price ascending select p).Take(3).ToList();
+
         Console.WriteLine("TOP 3 highest gold prices in the last year:");
         foreach (var price in top3HighestPrices)
+        {
+            Console.WriteLine($"Date: {price.Date}, Price: {price.Price}");
+        }
+        foreach (var price in top3HighestPricesQuery)
         {
             Console.WriteLine($"Date: {price.Date}, Price: {price.Price}");
         }
 
         Console.WriteLine("TOP 3 lowest gold prices in the last year:");
         foreach (var price in top3LowestPrices)
+        {
+            Console.WriteLine($"Date: {price.Date}, Price: {price.Price}");
+        }
+        foreach (var price in top3LowestPricesQuery)
         {
             Console.WriteLine($"Date: {price.Date}, Price: {price.Price}");
         }
@@ -67,7 +78,8 @@ class Program
             startPeriod = tempEnd.AddDays(1);
         }
 
-        
+        var profitableDaysQuery = (from p in allPricesAfterJanuary2020 where ((p.Price - averageBuyPrice) / averageBuyPrice * 100) > 5 select p.Date).ToList();
+
 
         // Sprawdź, kiedy zysk przekroczył 5%
         List<DateTime> profitableDays = new List<DateTime>();
@@ -109,9 +121,19 @@ class Program
         if (sortedPrices.Count >= 13) // Upewnienie się, że mamy wystarczającą ilość danych
         {
             var secondTenDates = sortedPrices.Skip(10).Take(3).Select(p => p.Date).ToList();
+            var secondTenDatesQuery = (from p in combinedPrices
+                           orderby p.Price
+                           select p.Date)
+                           .Skip(10)
+                           .Take(3)
+                           .ToList();
 
             Console.WriteLine("Dates that open the second ten of the gold price ranking from 2019 to 2022:");
             foreach (var date in secondTenDates)
+            {
+                Console.WriteLine(date.ToShortDateString());
+            }
+            foreach (var date in secondTenDatesQuery)
             {
                 Console.WriteLine(date.ToShortDateString());
             }
@@ -138,6 +160,8 @@ class Program
             {
                 double averagePrice = yearlyPrices.Average(p => p.Price);
                 Console.WriteLine($"The average gold price in {year} was: {averagePrice}");
+                double averagePriceQuery = (from p in yearlyPrices select p.Price).Average();
+                Console.WriteLine($"[Query] The average gold price in {year} was: {averagePriceQuery}");
             }
             else
             {
