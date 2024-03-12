@@ -50,4 +50,75 @@ public class GoldClient
 
     }
 
+    public IEnumerable<double> GetLowest1(List<GoldPrice> goldPrices) 
+    {
+        IEnumerable<double> lowest = (from gp in goldPrices
+                        orderby gp.Price
+                        select gp.Price).Take(3);
+
+        return lowest;
+    }
+
+    public IEnumerable<double> GetLowest2(List<GoldPrice> goldPrices) 
+    {
+        IEnumerable<double> lowest = goldPrices.OrderBy(gp => gp.Price)
+                                                .Select(gp => gp.Price)
+                                                .Take(3);
+
+        return lowest;
+    }
+
+    public IEnumerable<double> GetHighest1(List<GoldPrice> goldPrices) 
+    {
+        IEnumerable<double> highest = (from gp in goldPrices
+                        orderby gp.Price descending 
+                        select gp.Price).Take(3);
+
+        return highest;
+    }
+
+    public IEnumerable<double> GetHighest2(List<GoldPrice> goldPrices) 
+    {
+        IEnumerable<double> highest = goldPrices.OrderByDescending(gp => gp.Price)
+                                                .Select(gp => gp.Price)
+                                                .Take(3);
+
+        return highest;
+    }
+
+    public IEnumerable<DateTime> GetProfitDates(List<GoldPrice> goldPrices) 
+    {
+        IEnumerable<DateTime> profitDates = from jp in goldPrices
+                                            from unp in goldPrices
+                                            where jp.Date >= new DateTime(2020, 1, 1) && jp.Date <= new DateTime(2020, 1, 31)
+                                            && unp.Date >= new DateTime(2020, 1, 1)
+                                            && unp.Price/jp.Price >= 1.05
+                                            select unp.Date;
+
+        return profitDates;
+    }
+
+    public IEnumerable<DateTime> Get3Dates(List<GoldPrice> goldPrices) 
+    {
+        IEnumerable<DateTime> dates = (from gp in goldPrices
+                                      orderby gp.Price descending
+                                      select gp.Date).Skip(10).Take(3);
+
+        return dates;
+    }
+
+    public double GetAverage(List<GoldPrice> goldPrices)
+    {
+        return (from gp in goldPrices select gp.Price).Average();
+    }
+
+    public List<GoldPrice> GetBestInvestment(List<GoldPrice> goldPrices)
+    {
+        GoldPrice minimum = (from gp in goldPrices
+                            select gp).Min();
+        GoldPrice maximum = (from gp in goldPrices
+                            select gp).Max();
+
+        return new List<GoldPrice>{minimum, maximum};
+    }
 }
