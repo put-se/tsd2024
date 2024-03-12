@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Xml.Linq;
 using GoldSavings.App.Model;
 
 namespace GoldSavings.App.Client;
@@ -112,13 +113,26 @@ public class GoldClient
         return (from gp in goldPrices select gp.Price).Average();
     }
 
-    public List<GoldPrice> GetBestInvestment(List<GoldPrice> goldPrices)
+    public List<GoldPrice> GetInvestment(List<GoldPrice> goldPrices)
     {
         GoldPrice minimum = (from gp in goldPrices
-                            select gp).Min();
+                        orderby gp.Price
+                        select gp).First();
         GoldPrice maximum = (from gp in goldPrices
-                            select gp).Max();
+                        orderby gp.Price descending
+                        select gp).First();
 
         return new List<GoldPrice>{minimum, maximum};
     }
+
+    public void SaveToXML(List<GoldPrice> goldPrices)
+    {
+        var xml = new XElement("GoldPrices", goldPrices.Select( gp => new XElement("goldPrice", 
+                                                new XAttribute("Date", gp.Date),
+                                                new XAttribute("Price", gp.Price))));
+
+        xml.Save("test.xml");
+    }
+
+    public void ReadFromXML() => Console.WriteLine(XDocument.Load("test.xml").ToString());
 }

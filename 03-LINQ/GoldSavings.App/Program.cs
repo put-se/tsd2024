@@ -52,7 +52,7 @@ class Program
         List<GoldPrice> goldPrices2023 = goldClient.GetGoldPrices(new DateTime(2023, 01, 01), new DateTime(2023, 12, 31)).GetAwaiter().GetResult();
         List<GoldPrice> goldPrices2024 = goldClient.GetGoldPrices(new DateTime(2024, 01, 01), DateTime.Today).GetAwaiter().GetResult();
 
-        List<GoldPrice> goldPrices = goldPrices2020.Concat(goldPrices2021).Concat(goldPrices2022).Concat(goldPrices2023).Concat(goldPrices2024).ToList();
+        List<GoldPrice> goldPrices = goldPrices2019.Concat(goldPrices2020).Concat(goldPrices2021).Concat(goldPrices2022).Concat(goldPrices2023).Concat(goldPrices2024).ToList();
 
         /*var profitDates = goldClient.GetProfitDates(goldPrices);
         Console.WriteLine("Profitable dates:");
@@ -75,8 +75,13 @@ class Program
         avg = goldClient.GetAverage(goldPrices2023);
         Console.WriteLine("Average in 2023: " + avg);*/
 
-        var dates = goldClient.GetInvestment(goldPrices);
+        /*var dates = goldClient.GetInvestment(goldPrices);
         Console.WriteLine("Best investment:");
-        Console.WriteLine("Buy on ");
-    
+        Console.WriteLine($"Buy on {dates[0].Date} for {dates[0].Price}");
+        Console.WriteLine($"Sell on {dates[1].Date} for {dates[1].Price}");
+        Console.WriteLine($"Return {dates[1].Price/dates[0].Price - 1}");*/
+
+        //goldClient.SaveToXML(goldPrices2024);
+        goldClient.ReadFromXML();
+    }
 }
