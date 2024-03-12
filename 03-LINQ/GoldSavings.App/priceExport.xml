@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GoldPrices>
+  <GoldPrice>
+    <Price>262.1</Price>
+    <Date>2024-03-01</Date>
+  </GoldPrice>
+  <GoldPrice>
+    <Price>263.09</Price>
+    <Date>2024-03-04</Date>
+  </GoldPrice>
+  <GoldPrice>
+    <Price>268.59</Price>
+    <Date>2024-03-05</Date>
+  </GoldPrice>
+  <GoldPrice>
+    <Price>273.37</Price>
+    <Date>2024-03-06</Date>
+  </GoldPrice>
+  <GoldPrice>
+    <Price>273.01</Price>
+    <Date>2024-03-07</Date>
+  </GoldPrice>
+  <GoldPrice>
+    <Price>273.35</Price>
+    <Date>2024-03-08</Date>
+  </GoldPrice>
+  <GoldPrice>
+    <Price>275</Price>
+    <Date>2024-03-11</Date>
+  </GoldPrice>
+</GoldPrices>
