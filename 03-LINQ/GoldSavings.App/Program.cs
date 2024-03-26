@@ -10,41 +10,6 @@ class Program
 
         GoldClient goldClient = new GoldClient();
 
-        GoldPrice currentPrice = goldClient.GetCurrentGoldPrice().GetAwaiter().GetResult();
-        Console.WriteLine($"The price for today is {currentPrice.Price}");
-
-        List<GoldPrice> thisMonthPrices = goldClient.GetGoldPrices(new DateTime(2024, 03, 01), new DateTime(2024, 03, 11)).GetAwaiter().GetResult();
-        /*foreach(var goldPrice in thisMonthPrices)
-        {
-            Console.WriteLine($"The price for {goldPrice.Date} is {goldPrice.Price}");
-        }*/
-
-        /*var lowest = goldClient.GetLowest1(thisMonthPrices);
-        Console.WriteLine("Lowest prices 1:");
-        foreach(var goldPrice in lowest)
-        {
-            Console.WriteLine(goldPrice);
-        }
-        lowest = goldClient.GetLowest2(thisMonthPrices);
-        Console.WriteLine("Lowest prices 2:");
-        foreach(var goldPrice in lowest)
-        {
-            Console.WriteLine(goldPrice);
-        }
-
-        var highest = goldClient.GetHighest1(thisMonthPrices);
-        Console.WriteLine("Highest prices 1:");
-        foreach(var goldPrice in highest)
-        {
-            Console.WriteLine(goldPrice);
-        }
-        highest = goldClient.GetHighest2(thisMonthPrices);
-        Console.WriteLine("Highest prices 2:");
-        foreach(var goldPrice in highest)
-        {
-            Console.WriteLine(goldPrice);
-        }*/
-
         List<GoldPrice> goldPrices2019 = goldClient.GetGoldPrices(new DateTime(2019, 01, 01), new DateTime(2019, 12, 31)).GetAwaiter().GetResult();
         List<GoldPrice> goldPrices2020 = goldClient.GetGoldPrices(new DateTime(2020, 01, 01), new DateTime(2020, 12, 31)).GetAwaiter().GetResult();
         List<GoldPrice> goldPrices2021 = goldClient.GetGoldPrices(new DateTime(2021, 01, 01), new DateTime(2021, 12, 31)).GetAwaiter().GetResult();
@@ -54,34 +19,81 @@ class Program
 
         List<GoldPrice> goldPrices = goldPrices2019.Concat(goldPrices2020).Concat(goldPrices2021).Concat(goldPrices2022).Concat(goldPrices2023).Concat(goldPrices2024).ToList();
 
-        /*var profitDates = goldClient.GetProfitDates(goldPrices);
-        Console.WriteLine("Profitable dates:");
+        List<GoldPrice> thisMonthPrices = goldClient.GetGoldPrices(new DateTime(2024, 03, 01), new DateTime(2024, 03, 11)).GetAwaiter().GetResult();
+        List<GoldPrice> lastYearPrices = goldClient.GetGoldPrices(DateTime.Now.AddYears(-1), DateTime.Now).GetAwaiter().GetResult();
+
+        
+        // TASK 3 //
+        
+        /*var lowest = goldClient.Get3Lowest(lastYearPrices, 0);
+        Console.WriteLine("Lowest prices 1:");
+        foreach(var goldPrice in lowest)
+        {
+            Console.WriteLine(goldPrice);
+        }
+        lowest = goldClient.Get3Lowest(lastYearPrices, 1);
+        Console.WriteLine("Lowest prices 2:");
+        foreach(var goldPrice in lowest)
+        {
+            Console.WriteLine(goldPrice);
+        }
+
+        var highest = goldClient.Get3Highest(thisMonthPrices, 0);
+        Console.WriteLine("Highest prices 1:");
+        foreach(var goldPrice in highest)
+        {
+            Console.WriteLine(goldPrice);
+        }
+        highest = goldClient.Get3Highest(thisMonthPrices, 1);
+        Console.WriteLine("Highest prices 2:");
+        foreach(var goldPrice in highest)
+        {
+            Console.WriteLine(goldPrice);
+        }*/
+
+
+        // TASK 4 //
+        
+        /*var profitDates = goldClient.GetProfitDates(goldPrices, 0);
+        Console.WriteLine("Profitable dates for selling gold bought in January 2020:");
         foreach(var date in profitDates)
         {
             Console.WriteLine(date);
         }*/
 
-        /*var dates = goldClient.Get3Dates(goldPrices);
+
+        // TASK 5 //
+
+        /*var dates = goldClient.Get3Dates(goldPrices, 0);
         Console.WriteLine("Dates:");
         foreach(var date in dates)
         {
             Console.WriteLine(date);
         }*/
 
-        /*var avg = goldClient.GetAverage(goldPrices2021);
+
+        // TASK 6 //
+
+        /*var avg = goldClient.GetAverage(goldPrices2021, 1);
         Console.WriteLine("Average in 2021: " + avg);
-        avg = goldClient.GetAverage(goldPrices2022);
+        avg = goldClient.GetAverage(goldPrices2022, 1);
         Console.WriteLine("Average in 2022: " + avg);
-        avg = goldClient.GetAverage(goldPrices2023);
+        avg = goldClient.GetAverage(goldPrices2023, 1);
         Console.WriteLine("Average in 2023: " + avg);*/
 
-        /*var dates = goldClient.GetInvestment(goldPrices);
-        Console.WriteLine("Best investment:");
-        Console.WriteLine($"Buy on {dates[0].Date} for {dates[0].Price}");
-        Console.WriteLine($"Sell on {dates[1].Date} for {dates[1].Price}");
-        Console.WriteLine($"Return {dates[1].Price/dates[0].Price - 1}");*/
 
-        //goldClient.SaveToXML(goldPrices2024);
-        goldClient.ReadFromXML();
+        // TASK 7 //
+
+        //goldClient.GetInvestment(goldPrices, 0);
+
+
+        // TASK 8 //
+
+        //goldClient.SaveToXML(goldPrices2022, 0);
+
+        
+        // TASK 9 //
+
+        //goldClient.ReadFromXML();
     }
 }
