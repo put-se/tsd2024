@@ -10,7 +10,21 @@ public class Alarms
 {
 	public int countAlarms(int[] volume, int S)
 	{
-        return default(int);
+        int count=0;
+		int j=0;
+		while (S>0)
+		{
+			S = S - volume[0];
+			var tmp = volume[0];
+			for(var i = 1; i < volume.Length; i++) 
+			{
+   				volume[i - 1] = volume[i];
+			}
+			volume[volume.Length - 1] = tmp;
+			count++;
+		}
+		
+		return count;
 	}
 
 	#region Testing code
@@ -56,7 +70,7 @@ public class Alarms
 		Console.WriteLine("");
 		return res;
 	}
-	public static void Run() {
+	public static void Main() {
 		Boolean all_right;
 		all_right = true;
 		
