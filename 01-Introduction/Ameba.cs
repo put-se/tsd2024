@@ -10,7 +10,14 @@ public class Ameba
 {
 	public int simulate(int[] X, int A)
 	{
-	    return default(int);
+		var MonteCarlo = A;
+		for (int i = 0; X.Length > i; ++i) {
+			if(X[i] == MonteCarlo){
+				MonteCarlo = MonteCarlo + X[i];
+			}
+		}
+		
+	    return MonteCarlo;
 	}
 
 	#region Testing code
