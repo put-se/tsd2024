@@ -8,9 +8,8 @@ class Program
         Console.WriteLine($"Here is the result of your Ameba task:");
         Ameba.Run();
 
-        // Console.WriteLine($"Here is the result of your Alarms task:");
-        // Alarms.Run();
-        //
+        Console.WriteLine($"Here is the result of your Alarms task:");
+        Alarms.Run();
         // Console.WriteLine($"Here is the result of your RobotOnTheMoon task:");
         // RobotOnMoon.Run();
         
