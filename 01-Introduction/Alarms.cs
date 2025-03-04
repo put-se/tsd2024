@@ -12,17 +12,15 @@ public class Alarms
 	{
 		int cmp = 0;
 
-		while(S > 0){
+		while(S => 0){
 
 			for(int i = 0; i < volume.Length; i++){
 				S -= volume[i];
 				cmp++;
 				if(S<=0){
 					break;
-				}
-					
+				}	
 			}
-
 		}
 
         return cmp;
