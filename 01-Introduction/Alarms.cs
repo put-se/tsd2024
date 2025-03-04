@@ -12,7 +12,7 @@ public class Alarms
 	{
 		int cmp = 0;
 
-		while(S => 0){
+		while(S > 0){
 
 			for(int i = 0; i < volume.Length; i++){
 				S -= volume[i];
@@ -22,7 +22,7 @@ public class Alarms
 				}	
 			}
 		}
-
+		
         return cmp;
 	}
 

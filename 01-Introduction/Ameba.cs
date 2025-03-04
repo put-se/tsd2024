@@ -12,6 +12,7 @@ public class Ameba
 	{
 		for(int i = 0; i < X.Length; i++){
 			if(X[i] == A){
+				//A += X[i];
 				A *=2;
 			}
 		}
