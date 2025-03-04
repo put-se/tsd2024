@@ -10,7 +10,14 @@ public class Ameba
 {
 	public int simulate(int[] X, int A)
 	{
-	    return default(int);
+		int len = X.Length;
+		for(int i = 0; i<len; i++){
+			if(X[i]==A){
+				A*=2;
+			}
+		
+		}
+	    return A;
 	}
 
 	#region Testing code
@@ -56,7 +63,7 @@ public class Ameba
 		Console.WriteLine("");
 		return res;
 	}
-	public static void Run() {
+	public static void Main(string[] args) {
 		Boolean all_right;
 		all_right = true;
 		
