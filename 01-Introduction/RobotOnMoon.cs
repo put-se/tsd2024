@@ -9,9 +9,56 @@ using System.Text.RegularExpressions;
 
 public class RobotOnMoon
 {
-    public string isSafeCommand(string[] board, string S)
-    {
-        return default(string);
+    public string isSafeCommand(string[] board, string S) {
+        int rows = board.Length;
+        int cols = board[0].Length;
+
+        int rx = 0;
+        int ry = 0;
+
+        // Find the robot's starting position
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (board[i][j] == 'S') {
+                    ry = i;
+                    rx = j;
+                }
+            }
+        }
+
+        // Execute the commands
+        foreach (char command in S) {
+            int newRy = ry;
+            int newRx = rx;
+
+            switch (command) {
+                case 'U':
+                    newRy--;
+                    break;
+                case 'D':
+                    newRy++;
+                    break;
+                case 'L':
+                    newRx--;
+                    break;
+                case 'R':
+                    newRx++;
+                    break;
+            }
+
+            // Check if the robot is out of bounds
+            if (newRy < 0 || newRy >= rows || newRx < 0 || newRx >= cols) {
+                return "Dead";
+            }
+
+            // Check if the next cell is a wall
+            if (board[newRy][newRx] != '#') {
+                ry = newRy;
+                rx = newRx;
+            }
+        }
+
+        return "Alive";
     }
 
     #region Testing code
