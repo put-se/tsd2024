@@ -8,9 +8,21 @@ using System.Text.RegularExpressions;
 
 public class Alarms
 {
+	
 	public int countAlarms(int[] volume, int S)
-	{
-        return default(int);
+{
+    int alarmCounter = 0;
+     int vSize = volume.Length;
+    int index = 0;
+
+    while (S > 0)
+    {
+        S =S- volume[index]; 
+        alarmCounter++; 
+        index = (index + 1) % vSize; 
+    }
+
+    return alarmCounter;
 	}
 
 	#region Testing code
