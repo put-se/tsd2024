@@ -8,13 +8,24 @@ using System.Text.RegularExpressions;
 
 public class Alarms
 {
-	public int countAlarms(int[] volume, int S)
-	{
-        return default(int);
-	}
+    public int countAlarms(int[] volume, int S)
+    {
+        int count = 0;
+        int index = 0;
+        int n = volume.Length;
 
-	#region Testing code
-	[STAThread]
+        while (S > 0)
+        {
+            S -= volume[index];
+            index = (index + 1) % n;
+            count++;
+        }
+
+        return count;
+    }
+
+    #region Testing code
+    [STAThread]
 	private static Boolean KawigiEdit_RunTest(int testNum, int[] p0, int p1, Boolean hasAnswer, int p2) {
 		Console.Write("Test " + testNum + ": [" + "{");
 		for (int i = 0; p0.Length > i; ++i) {
