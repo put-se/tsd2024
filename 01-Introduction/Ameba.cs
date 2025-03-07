@@ -8,13 +8,22 @@ using System.Text.RegularExpressions;
 
 public class Ameba
 {
-	public int simulate(int[] X, int A)
-	{
-	    return default(int);
-	}
+    public int simulate(int[] X, int A)
+    {
+        int size = A;
+        foreach (int gel in X)
+        {
+            if (gel == size)
+            {
+                size *= 2;
+            }
+        }
+        return size;
+    }
 
-	#region Testing code
-	[STAThread]
+
+    #region Testing code
+    [STAThread]
 	private static Boolean KawigiEdit_RunTest(int testNum, int[] p0, int p1, Boolean hasAnswer, int p2) {
 		Console.Write("Test " + testNum + ": [" + "{");
 		for (int i = 0; p0.Length > i; ++i) {
