@@ -13,6 +13,7 @@ public class GoldClient
         _client.DefaultRequestHeaders.Accept.Clear();
 
     }
+ 
     public async Task<GoldPrice> GetCurrentGoldPrice()
     {
         try
