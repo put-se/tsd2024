@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 using GoldSavings.App.Client;
 using GoldSavings.App.Model;
 
@@ -22,38 +24,27 @@ namespace GoldSavings.App.Services
             return prices ?? new List<GoldPrice>();  // Prevent null values
         }
         
-        public void SaveToXML(List<GoldPrice> goldPrices, string fileName)
+        public void SaveToXML(List<GoldPrice> prices, string filePath)
         {
-            var doc = new XmlDocument();
-            var root = doc.CreateElement("GoldPrices");
-            doc.AppendChild(root);
+            var xml = new XElement("GoldPrices",
+                prices.Select(p => 
+                    new XElement("GoldPrice",
+                        new XElement("Date", p.Date.ToString("yyyy-MM-dd")),
+                        new XElement("Price", p.Price)
+                    )
+                )
+            );
 
-            foreach (var price in goldPrices)
-            {
-                var priceNode = doc.CreateElement("Price");
-                priceNode.SetAttribute("Date", price.Date.ToString("yyyy-MM-dd"));
-                priceNode.SetAttribute("Price", price.Price.ToString());
-                root.AppendChild(priceNode);
-            }
-            doc.Save(fileName);
-            Console.WriteLine($"Saved {goldPrices.Count} records to {fileName}");
+            xml.Save(filePath);
         }
         
-        public List<GoldPrice> LoadFromXML(string fileName)
-        {
-            var doc = new XmlDocument();
-            doc.Load(fileName);
-            var prices = new List<GoldPrice>();
-            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
-            {
-                var price = new GoldPrice()
-                {
-                    Date = DateTime.Parse(node.Attributes["Date"].Value),
-                    Price = double.Parse(node.Attributes["Price"].Value)
-                };
-                prices.Add(price);
-            }
-            return prices;
-        }
+        public List<GoldPrice> LoadFromXML(string filePath) => 
+            File.Exists(filePath) ? 
+                XDocument.Load(filePath).Root.Elements("GoldPrice")
+                    .Select(x => new GoldPrice
+                    {
+                        Date = DateTime.Parse(x.Element("Date").Value),
+                        Price = double.Parse(x.Element("Price").Value, CultureInfo.InvariantCulture)
+                    }).ToList() : new List<GoldPrice>();
     }
 }
