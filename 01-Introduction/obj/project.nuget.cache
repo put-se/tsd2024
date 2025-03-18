@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "v+apnyiWQEQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\tommi\\OneDrive\\Documents\\ESIR\\Mobilité internationnale\\Semestre\\Techno_of_software_dev\\tsd2024\\01-Introduction\\ProblemChallenge.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tommi\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.13\\microsoft.netcore.app.ref.8.0.13.nupkg.sha512",
+    "C:\\Users\\tommi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.13\\microsoft.windowsdesktop.app.ref.8.0.13.nupkg.sha512",
+    "C:\\Users\\tommi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.13\\microsoft.aspnetcore.app.ref.8.0.13.nupkg.sha512",
+    "C:\\Users\\tommi\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.13\\microsoft.netcore.app.host.win-x64.8.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}
