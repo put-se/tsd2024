@@ -1,12 +1,30 @@
 using Newtonsoft.Json;
 
-namespace GoldSavings.App.Model;
+using System;
+using System.Xml.Serialization;
 
-public class GoldPrice
+namespace GoldSavings.App.Model
 {
-    [JsonProperty("Data")]
-    public DateTime Date { get; set; }
+    [Serializable]
+    public class GoldPrice
+    {
+        public DateTime Date { get; set; }
+        public decimal Price { get; set; }
 
-    [JsonProperty("Cena")]
-    public double Price { get; set; }
+        // For XML serialization, good to have a default constructor
+        public GoldPrice()
+        {
+        }
+
+        public GoldPrice(DateTime date, decimal price)
+        {
+            Date = date;
+            Price = price;
+        }
+
+        public override string ToString()
+        {
+            return $"{Date.ToShortDateString()}: {Price:N2} PLN";
+        }
+    }
 }
