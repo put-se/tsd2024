@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\stece\\Desktop\\zadanie yolo\\03-LINQ\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1EFD8451-BB7C-43FA-9488-CA63E92201C4}|GoldSavings.App\\GoldSavings.App.csproj|c:\\users\\stece\\desktop\\zadanie yolo\\03-linq\\goldsavings.app\\dataservices\\golddataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EFD8451-BB7C-43FA-9488-CA63E92201C4}|GoldSavings.App\\GoldSavings.App.csproj|solutionrelative:goldsavings.app\\dataservices\\golddataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1EFD8451-BB7C-43FA-9488-CA63E92201C4}|GoldSavings.App\\GoldSavings.App.csproj|c:\\users\\stece\\desktop\\zadanie yolo\\03-linq\\goldsavings.app\\dataservices\\goldanalysisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1EFD8451-BB7C-43FA-9488-CA63E92201C4}|GoldSavings.App\\GoldSavings.App.csproj|solutionrelative:goldsavings.app\\dataservices\\goldanalysisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EFD8451-BB7C-43FA-9488-CA63E92201C4}|GoldSavings.App\\GoldSavings.App.csproj|c:\\users\\stece\\desktop\\zadanie yolo\\03-linq\\goldsavings.app\\dataservices\\goldresultprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EFD8451-BB7C-43FA-9488-CA63E92201C4}|GoldSavings.App\\GoldSavings.App.csproj|solutionrelative:goldsavings.app\\dataservices\\goldresultprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1EFD8451-BB7C-43FA-9488-CA63E92201C4}|GoldSavings.App\\GoldSavings.App.csproj|c:\\users\\stece\\desktop\\zadanie yolo\\03-linq\\goldsavings.app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1EFD8451-BB7C-43FA-9488-CA63E92201C4}|GoldSavings.App\\GoldSavings.App.csproj|solutionrelative:goldsavings.app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EFD8451-BB7C-43FA-9488-CA63E92201C4}|GoldSavings.App\\GoldSavings.App.csproj|c:\\users\\stece\\desktop\\zadanie yolo\\03-linq\\goldsavings.app\\model\\goldprice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EFD8451-BB7C-43FA-9488-CA63E92201C4}|GoldSavings.App\\GoldSavings.App.csproj|solutionrelative:goldsavings.app\\model\\goldprice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1EFD8451-BB7C-43FA-9488-CA63E92201C4}|GoldSavings.App\\GoldSavings.App.csproj|c:\\users\\stece\\desktop\\zadanie yolo\\03-linq\\goldsavings.app\\dataservices\\golddataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EFD8451-BB7C-43FA-9488-CA63E92201C4}|GoldSavings.App\\GoldSavings.App.csproj|solutionrelative:goldsavings.app\\dataservices\\golddataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EFD8451-BB7C-43FA-9488-CA63E92201C4}|GoldSavings.App\\GoldSavings.App.csproj|c:\\users\\stece\\desktop\\zadanie yolo\\03-linq\\goldsavings.app\\dataservices\\goldresultprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EFD8451-BB7C-43FA-9488-CA63E92201C4}|GoldSavings.App\\GoldSavings.App.csproj|solutionrelative:goldsavings.app\\dataservices\\goldresultprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1EFD8451-BB7C-43FA-9488-CA63E92201C4}|GoldSavings.App\\GoldSavings.App.csproj|c:\\users\\stece\\desktop\\zadanie yolo\\03-linq\\goldsavings.app\\model\\goldprice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EFD8451-BB7C-43FA-9488-CA63E92201C4}|GoldSavings.App\\GoldSavings.App.csproj|solutionrelative:goldsavings.app\\model\\goldprice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1EFD8451-BB7C-43FA-9488-CA63E92201C4}|GoldSavings.App\\GoldSavings.App.csproj|c:\\users\\stece\\desktop\\zadanie yolo\\03-linq\\goldsavings.app\\client\\goldclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -41,14 +41,6 @@
           "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "GoldClient.cs",
@@ -58,21 +50,19 @@
               "RelativeToolTip": "GoldSavings.App\\Client\\GoldClient.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAiwDoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T18:02:03.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-18T18:02:03.034Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "GoldResultPrinter.cs",
               "DocumentMoniker": "C:\\Users\\stece\\Desktop\\zadanie yolo\\03-LINQ\\GoldSavings.App\\DataServices\\GoldResultPrinter.cs",
               "RelativeDocumentMoniker": "GoldSavings.App\\DataServices\\GoldResultPrinter.cs",
               "ToolTip": "C:\\Users\\stece\\Desktop\\zadanie yolo\\03-LINQ\\GoldSavings.App\\DataServices\\GoldResultPrinter.cs",
               "RelativeToolTip": "GoldSavings.App\\DataServices\\GoldResultPrinter.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAcwB8AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T17:30:34.253Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-18T17:30:34.253Z"
             },
             {
               "$type": "Document",
@@ -82,27 +72,25 @@
               "RelativeDocumentMoniker": "GoldSavings.App\\Program.cs",
               "ToolTip": "C:\\Users\\stece\\Desktop\\zadanie yolo\\03-LINQ\\GoldSavings.App\\Program.cs",
               "RelativeToolTip": "GoldSavings.App\\Program.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAmwKAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T17:21:56.908Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GoldDataService.cs",
-              "DocumentMoniker": "C:\\Users\\stece\\Desktop\\zadanie yolo\\03-LINQ\\GoldSavings.App\\DataServices\\GoldDataService.cs",
-              "RelativeDocumentMoniker": "GoldSavings.App\\DataServices\\GoldDataService.cs",
-              "ToolTip": "C:\\Users\\stece\\Desktop\\zadanie yolo\\03-LINQ\\GoldSavings.App\\DataServices\\GoldDataService.cs*",
-              "RelativeToolTip": "GoldSavings.App\\DataServices\\GoldDataService.cs*",
-              "ViewState": "AgIAACoAAAAAAAAAAAAYwB8AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T17:41:55.221Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-18T17:21:56.908Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "GoldDataService.cs",
+              "DocumentMoniker": "C:\\Users\\stece\\Desktop\\zadanie yolo\\03-LINQ\\GoldSavings.App\\DataServices\\GoldDataService.cs",
+              "RelativeDocumentMoniker": "GoldSavings.App\\DataServices\\GoldDataService.cs",
+              "ToolTip": "C:\\Users\\stece\\Desktop\\zadanie yolo\\03-LINQ\\GoldSavings.App\\DataServices\\GoldDataService.cs",
+              "RelativeToolTip": "GoldSavings.App\\DataServices\\GoldDataService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T17:41:55.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "GoldPrice.cs",
               "DocumentMoniker": "C:\\Users\\stece\\Desktop\\zadanie yolo\\03-LINQ\\GoldSavings.App\\Model\\GoldPrice.cs",
               "RelativeDocumentMoniker": "GoldSavings.App\\Model\\GoldPrice.cs",
@@ -110,18 +98,17 @@
               "RelativeToolTip": "GoldSavings.App\\Model\\GoldPrice.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAADwvx0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T17:29:55.523Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-18T17:29:55.523Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "GoldAnalysisService.cs",
               "DocumentMoniker": "C:\\Users\\stece\\Desktop\\zadanie yolo\\03-LINQ\\GoldSavings.App\\DataServices\\GoldAnalysisService.cs",
               "RelativeDocumentMoniker": "GoldSavings.App\\DataServices\\GoldAnalysisService.cs",
               "ToolTip": "C:\\Users\\stece\\Desktop\\zadanie yolo\\03-LINQ\\GoldSavings.App\\DataServices\\GoldAnalysisService.cs",
               "RelativeToolTip": "GoldSavings.App\\DataServices\\GoldAnalysisService.cs",
-              "ViewState": "AgIAAJgAAAAAAAAAAAAmwLAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAAAFkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-18T17:25:47.775Z",
               "EditorCaption": ""
@@ -129,15 +116,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "GoldSavings.App",
+              "Title": "GoldSavings.App.csproj",
               "DocumentMoniker": "C:\\Users\\stece\\Desktop\\zadanie yolo\\03-LINQ\\GoldSavings.App\\GoldSavings.App.csproj",
               "RelativeDocumentMoniker": "GoldSavings.App\\GoldSavings.App.csproj",
               "ToolTip": "C:\\Users\\stece\\Desktop\\zadanie yolo\\03-LINQ\\GoldSavings.App\\GoldSavings.App.csproj",
               "RelativeToolTip": "GoldSavings.App\\GoldSavings.App.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-18T17:21:59.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-18T17:21:59.783Z"
             }
           ]
         }

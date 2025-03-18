@@ -76,8 +76,12 @@ namespace GoldSavings.App.Services
             // Calculate minimum price in January 2020 (buy price)
             var buyPrice = jan2020Prices.Min(p => p.Price);
 
-            // Find all days with 5% or more return compared to the buy price
+            // Find the last day of January 2020 (or the last available day in that month)
+            var lastJan2020Day = jan2020Prices.Max(p => p.Date);
+
+            // Find all days AFTER January 2020 with 5% or more return compared to the buy price
             var daysWithReturn = _goldPrices
+                .Where(p => p.Date > lastJan2020Day) // Tylko dni PO styczniu 2020
                 .Where(p => (p.Price / buyPrice) >= 1.05m) // 5% or more return
                 .OrderBy(p => p.Date)
                 .ToList();
