@@ -8,13 +8,45 @@ using System.Text.RegularExpressions;
 
 public class Alarms
 {
-	public int countAlarms(int[] volume, int S)
-	{
-        return default(int);
-	}
+    public int countAlarms(int[] volume, int S)
+    {
+        // Counter for the number of alarms that have rung
+        int alarmCount = 0;
 
-	#region Testing code
-	[STAThread]
+        // Alex's current sleepiness level
+        int sleepiness = S;
+
+        // Continue until Alex wakes up
+        while (sleepiness > 0)
+        {
+            // Get the current alarm (first in the list)
+            int currentAlarm = volume[0];
+
+            // Decrease Alex's sleepiness by the alarm volume
+            sleepiness -= currentAlarm;
+
+            // Increment the alarm counter
+            alarmCount++;
+
+            // If Alex is still sleeping, move the first alarm to the end of the list
+            if (sleepiness > 0)
+            {
+                // Rotate the array (move first element to the end)
+                // This is done by shifting all elements one position to the left
+                // and placing the first element at the end
+                for (int i = 0; i < volume.Length - 1; i++)
+                {
+                    volume[i] = volume[i + 1];
+                }
+                volume[volume.Length - 1] = currentAlarm;
+            }
+        }
+
+        return alarmCount;
+    }
+
+    #region Testing code
+    [STAThread]
 	private static Boolean KawigiEdit_RunTest(int testNum, int[] p0, int p1, Boolean hasAnswer, int p2) {
 		Console.Write("Test " + testNum + ": [" + "{");
 		for (int i = 0; p0.Length > i; ++i) {

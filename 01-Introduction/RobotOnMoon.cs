@@ -11,7 +11,71 @@ public class RobotOnMoon
 {
     public string isSafeCommand(string[] board, string S)
     {
-        return default(string);
+        // Find the initial position of the robot
+        int robotRow = -1;
+        int robotCol = -1;
+
+        for (int i = 0; i < board.Length; i++)
+        {
+            for (int j = 0; j < board[i].Length; j++)
+            {
+                if (board[i][j] == 'S')
+                {
+                    robotRow = i;
+                    robotCol = j;
+                    break;
+                }
+            }
+            if (robotRow != -1) break;
+        }
+
+        // Dimensions of the board
+        int numRows = board.Length;
+        int numCols = board[0].Length;
+
+        // Process each command in sequence
+        foreach (char command in S)
+        {
+            int newRow = robotRow;
+            int newCol = robotCol;
+
+            // Determine the next position based on the command
+            switch (command)
+            {
+                case 'U':
+                    newRow--;
+                    break;
+                case 'D':
+                    newRow++;
+                    break;
+                case 'L':
+                    newCol--;
+                    break;
+                case 'R':
+                    newCol++;
+                    break;
+            }
+
+            // Check if the new position is out of bounds
+            if (newRow < 0 || newRow >= numRows || newCol < 0 || newCol >= numCols)
+            {
+                return "Dead"; // Robot moved out of the map
+            }
+
+            // Check if the new position contains an obstacle
+            if (board[newRow][newCol] == '#')
+            {
+                // Stay in place (ignore command)
+                continue;
+            }
+
+            // Move to the new position
+            robotRow = newRow;
+            robotCol = newCol;
+        }
+
+        // If the robot is still on the map after all commands, it's alive
+        return "Alive";
     }
 
     #region Testing code
