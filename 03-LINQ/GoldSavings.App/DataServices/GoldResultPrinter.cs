@@ -11,7 +11,7 @@ namespace GoldSavings.App.Services
             Console.WriteLine($"\n--- {title} ---");
             foreach (var price in prices)
             {
-                Console.WriteLine($"{price.Date:yyyy-MM-dd} - {price.Price} PLN");
+                Console.WriteLine($"{price.Date:yyyy-MM-dd} - {Math.Round(price.Price, 2)} PLN");
             }
         }
 
