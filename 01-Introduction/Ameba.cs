@@ -8,13 +8,29 @@ using System.Text.RegularExpressions;
 
 public class Ameba
 {
-	public int simulate(int[] X, int A)
-	{
-	    return default(int);
-	}
+    public int simulate(int[] X, int A)
+    {
+        // Start with the initial size A
+        int currentSize = A;
 
-	#region Testing code
-	[STAThread]
+        // Iterate through each gel in the order presented
+        foreach (int gelSize in X)
+        {
+            // If the gel size is exactly equal to Monte-Carlo's current size
+            if (gelSize == currentSize)
+            {
+                // Monte-Carlo consumes the gel and doubles in size
+                currentSize *= 2;
+            }
+            // Otherwise, nothing happens (Monte-Carlo can't consume the gel)
+        }
+
+        // Return Monte-Carlo's final size
+        return currentSize;
+    }
+
+    #region Testing code
+    [STAThread]
 	private static Boolean KawigiEdit_RunTest(int testNum, int[] p0, int p1, Boolean hasAnswer, int p2) {
 		Console.Write("Test " + testNum + ": [" + "{");
 		for (int i = 0; p0.Length > i; ++i) {
