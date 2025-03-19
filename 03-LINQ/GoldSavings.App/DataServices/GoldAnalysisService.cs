@@ -1,55 +1,64 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using GoldSavings.App.Model;
+﻿using GoldSavings.App.Model;
 
-namespace GoldSavings.App.Services
+namespace GoldSavings.App.Services;
+
+public class GoldAnalysisService
 {
-    public class GoldAnalysisService
+    private readonly List<GoldPrice> _goldPrices;
+
+    public GoldAnalysisService(List<GoldPrice> goldPrices)
     {
-        private readonly List<GoldPrice> _goldPrices;
+        _goldPrices = goldPrices;
+    }
 
-        public GoldAnalysisService(List<GoldPrice> goldPrices)
-        {
-            _goldPrices = goldPrices;
-        }
+    public double GetAveragePrice(DateTime start, DateTime end)
+    {
+        return (
+            from goldprice in _goldPrices
+            where goldprice.Date < end && goldprice.Date >= start
+            select goldprice
+        ).Average(p => p.Price);
+        //return _goldPrices.FindAll(p=> p.Date < end && p.Date >= start).Average(p => p.Price);
+    }
 
-        public double GetAveragePrice()
-        {
-            return _goldPrices.Average(p => p.Price);
-        }
+    public GoldPrice[] Top(DateTime start, DateTime end, int n)
+    {
+        return _goldPrices.FindAll(p => p.Date < end && p.Date >= start)
+                .OrderBy(p => -p.Price)
+                .Take(n)
+                .ToArray()
+            ;
+    }
 
-        public double[] Top(int n)
-        {
-            return _goldPrices.OrderBy(p => -p.Price).Take(n).Select(p => p.Price).ToArray();
-        }
+    public GoldPrice[] Bottom(DateTime start, DateTime end, int n)
+    {
+        return (
+            from gold in _goldPrices
+            where gold.Date < end && gold.Date >= start
+            orderby gold.Price
+            select gold
+        ).Take(n).ToArray();
+    }
 
-        public double[] Bottom(int n)
-        {
-            return _goldPrices.OrderBy(p => p.Price).Take(n).Select(p => p.Price).ToArray();
-        }
+    public GoldPrice[] BestEarned(DateTime start, DateTime end, DateTime max, double threshold)
+    {
+        var all = _goldPrices.FindAll(p => p.Date < end && p.Date >= start);
+        var minPrice = all.FindAll(p => p.Date < max).Select(p => p.Price).Min();
+        var en = all.FindAll(p => p.Date >= max).GetEnumerator();
 
-        public List<DateTime> BestEarned(DateTime max, double threshold)
-        {
-            var minPrice = _goldPrices.FindAll(p => p.Date < max).Select(p => p.Price).Min();
-            var en = _goldPrices.FindAll(p => p.Date >= max).GetEnumerator();
+        var bestdate = new List<GoldPrice>();
+        ;
 
-            List<DateTime> bestdate = new List<DateTime>(); ;
+        while (en.MoveNext())
+            if (en.Current.Price / minPrice - 1 > threshold)
+                bestdate.Add(en.Current);
 
-            while (en.MoveNext())
-            {
-                if (en.Current.Price / minPrice - 1 > threshold)
-                {
-                    bestdate.Add(en.Current.Date);
-                }
-            }
+        return bestdate.ToArray();
+    }
 
-            return bestdate;
-        }
-        
-        public double[] SecondTen()
-        {
-            return _goldPrices.OrderBy(p=>-p.Price).Skip(10).Take(3).Select(p => p.Price).ToArray();
-        }
+    public GoldPrice[] SecondTen(DateTime start, DateTime end, int n)
+    {
+        return _goldPrices.FindAll(p => p.Date < end && p.Date >= start).OrderBy(p => -p.Price).Skip(10).Take(n)
+            .ToArray();
     }
 }

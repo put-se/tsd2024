@@ -1,24 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using GoldSavings.App.Client;
+﻿using GoldSavings.App.Client;
 using GoldSavings.App.Model;
 
-namespace GoldSavings.App.Services
+namespace GoldSavings.App.Services;
+
+public class GoldDataService
 {
-    public class GoldDataService
+    private readonly GoldClient _goldClient;
+
+    public GoldDataService()
     {
-        private readonly GoldClient _goldClient;
+        _goldClient = new GoldClient();
+    }
 
-        public GoldDataService()
+    public async Task<List<GoldPrice>> GetGoldPrices(DateTime startDate, DateTime endDate)
+    {
+        var prices = new List<GoldPrice>();
+
+        while (endDate - startDate > TimeSpan.FromDays(365))
         {
-            _goldClient = new GoldClient();
+            var startDate2 = startDate.AddDays(365);
+            prices = prices.Concat(await _goldClient.GetGoldPrices(startDate, startDate2)).ToList();
+            startDate = startDate2;
         }
 
-        public async Task<List<GoldPrice>> GetGoldPrices(DateTime startDate, DateTime endDate)
-        {
-            var prices = await _goldClient.GetGoldPrices(startDate, endDate);
-            return prices ?? new List<GoldPrice>();  // Prevent null values
-        }
+        prices = prices.Concat(await _goldClient.GetGoldPrices(startDate, endDate)).ToList();
+
+        return prices; // Prevent null values
     }
 }

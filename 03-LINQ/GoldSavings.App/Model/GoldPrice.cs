@@ -4,9 +4,7 @@ namespace GoldSavings.App.Model;
 
 public class GoldPrice
 {
-    [JsonProperty("Data")]
-    public DateTime Date { get; set; }
+    [JsonProperty("Data")] public DateTime Date { get; set; }
 
-    [JsonProperty("Cena")]
-    public double Price { get; set; }
+    [JsonProperty("Cena")] public double Price { get; set; }
 }
